@@ -24,5 +24,24 @@ module.exports = {
     'testing-library',
   ],
   rules: {
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.test.js', '**/*.spec.js', 'src/setupTests.js'],
+        optionalDependencies: false,
+        peerDependencies: true,
+      },
+    ],
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
+    'react/function-component-definition': 'off',
+    'arrow-body-style': 'off',
   },
 };
