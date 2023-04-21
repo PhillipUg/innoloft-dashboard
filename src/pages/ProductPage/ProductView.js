@@ -11,6 +11,7 @@ const ProductView = () => {
   const product = useSelector((state) => state.product.data);
   const config = useSelector((state) => state.config.data);
   const navigate = useNavigate();
+  const btnStyle = config.mainColor ? { backgroundColor: config.mainColor } : '';
 
   if (!product) {
     return <div>Loading...</div>;
@@ -21,19 +22,19 @@ const ProductView = () => {
   };
 
   return (
-    <div className="py-20">
+    <div className="py-8">
       <button
         type="button"
         onClick={handleEditClick}
-        className="text-white font-bold py-2 px-4 rounded"
-        style={{ backgroundColor: config.mainColor }}
+        className="text-white font-bold py-2 px-4 ml-4 mb-2 rounded"
+        style={btnStyle}
       >
         Edit
       </button>
-      <div className="grid grid-rows-5 gap-6">
-        <div className="grid grid-cols-1 grid-rows-3 grid-flow-col row-span-2 gap-6 rounded-2xl shadow-md p-8">
+      <div className="grid md:grid-rows-5 gap-6 sm:grid-cols-1">
+        <div className="flex flex-col md:grid md:grid-cols-1 md:grid-rows-3 md:grid-flow-col md:row-span-2 md:gap-6 rounded-2xl shadow-md md:p-8 w-full">
           <MainSection product={product} />
-          <UserInfo product={product} />
+          {config.hasUserSection && <UserInfo product={product} />}
           <Map product={product} />
         </div>
         <VideoSection product={product} />

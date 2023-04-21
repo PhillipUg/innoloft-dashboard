@@ -10,31 +10,31 @@ const DetailsSection = ({ product }) => {
   } = product;
   return (
     <div className="row-span-1 shadow-md p-8 rounded-2xl">
-      <h2 className="text-xl font-semibold mb-4">Details</h2>
+      <h2 className="text-xl font-semibold mb-4">Offer details</h2>
       <div className="grid grid-cols-2 gap-8 place-items-stretch">
         <div className="">
-          <strong>Technologies/Categories:</strong>
+          <p className="mb-2">Technology</p>
           <div className="flex flex-row flex-wrap ">
             {categories.map((category) => (
-              <span key={category.id}>{category.name}</span>
+              <span className="p-2 mx-2 bg-slate-100 rounded-2xl" key={category.id}>{category.name}</span>
             ))}
           </div>
         </div>
-        <div className="">
-          <strong>Business Models:</strong>
+        <div>
+          <p className="mb-2">Business Model</p>
           <div className="flex flex-row flex-wrap">
             {businessModels.map((model) => (
-              <span key={model.id}>{model.name}</span>
+              <span className="p-2 mx-2 bg-slate-100 rounded-2xl" key={model.id}>{model.name}</span>
             ))}
           </div>
         </div>
-        <div className="">
-          <strong>TRL</strong>
-          <p>{trl.name}</p>
+        <div>
+          <p className="mb-2">TRL</p>
+          <span className="p-2 mx-2 bg-slate-100 rounded-2xl inline-block">{trl.name}</span>
         </div>
-        <div className="">
-          <strong>Cost:</strong>
-          <p>{investmentEffort}</p>
+        <div>
+          <p className="mb-2">Costs</p>
+          <span className="p-2 mx-2 bg-slate-100 rounded-2xl inline-block">{investmentEffort}</span>
         </div>
       </div>
     </div>

@@ -13,8 +13,6 @@ export const editProduct = createAsyncThunk(
   'product/updateProduct',
   async (productId, productData) => {
     const response = await updateProduct(productId, productData);
-    // eslint-disable-next-line
-    console.log('product update response: ', response.data);
     return response.data;
   },
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Logo = () => (
-  <div className="flex w-1/6 xl:w-1/12">
+  <div className="flex w-3/6 md:w-16 xl:w-1/12">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244.3 44.4" className="fill-white">
       <g id="Ebene_2" data-name="Ebene 2">
         <g id="Ebene_1-2" data-name="Ebene 1">

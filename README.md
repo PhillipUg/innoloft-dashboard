@@ -22,7 +22,13 @@ This project is a dashboard for displaying and editing product information, buil
  npm install
  ```
 
- 4. Start the development server:
+ 4. Create a `.env` file from the `.env.example`
+ ```bash
+ cp .env.example .env
+ ```
+**NOTE:** you need to a google maps api key for the map on the product view page to work. Add the key to the `REACT_APP_GOOGLE_MAPS_API_KEY` env in the `.env` file.
+
+ 5. Start the development server:
  ```bash
  npm start
  ```

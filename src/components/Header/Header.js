@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../Logo';
+import Logo from '../SvgComponents/Logo';
 
 const Header = ({ mainColor }) => {
   const headerStyle = mainColor ? { backgroundColor: mainColor } : '';

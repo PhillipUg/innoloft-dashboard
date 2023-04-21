@@ -5,7 +5,6 @@ import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import MainPage from './pages/MainPage/MainPage';
 import ProductView from './pages/ProductPage/ProductView';
-import UserSection from './components/UserSection/UserSection';
 import './App.css';
 import ProductEditView from './pages/ProductEditPage/ProductEditView';
 import getConfiguration from './redux/actions/configActions';
@@ -23,9 +22,6 @@ const App = () => {
   const configStatus = useSelector((state) => state.config.status);
   const config = useSelector((state) => state.config.data);
 
-  // eslint-disable-next-line
-  console.log('config data ======>', config);
-
   if (configStatus === 'loading' || configStatus === 'idle') {
     return <div>Loading...</div>;
   }
@@ -34,7 +30,6 @@ const App = () => {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header mainColor={config.mainColor} logo={config.logo} />
-        {config.hasUserSection && <UserSection />}
         <Navigation />
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Routes>

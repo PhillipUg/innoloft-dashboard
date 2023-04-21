@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 
 const VideoSection = () => {
   return (
-    <div className="bg-white row-span-2 py-20 px-48 shadow-md rounded-2xl">
+    <div className="bg-white row-span-1 md:row-span-2  shadow-md rounded-2xl md:p-6">
       <h2 className="text-xl font-semibold mb-4">Video</h2>
-      <div className="video-responsive">
+      <div className="relative h-5/6 flex justify-center items-center">
         <iframe
-          width="853"
-          height="480"
           title="Product Video"
-          className="absolute top-0 left-0 w-full h-full"
+          className="w-full h-full md:w-5/6 md:h-5/6"
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           frameBorder="0"
           allowFullScreen

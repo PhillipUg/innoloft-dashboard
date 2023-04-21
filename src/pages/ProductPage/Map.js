@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LocationIcon from '../../components/LocationIcon';
+import LocationIcon from '../../components/SvgComponents/LocationIcon';
 
 const Map = ({ product }) => {
   const {
@@ -13,6 +13,7 @@ const Map = ({ product }) => {
     zipCode,
   } = product.company.address;
   const addressName = `${street} ${house}, ${zipCode} ${city.name}, ${country.name} `;
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
   return (
     <div className="flex flex-col items-between bg-white row-span-2 col-span-2">
@@ -24,7 +25,7 @@ const Map = ({ product }) => {
         <iframe
           title="Company Address"
           className="w-full h-full"
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAMReDKFnQ0-6-Pw5R8evmC-pyUY4aTal8&q=${latitude},${longitude}`}
+          src={`https://www.google.com/maps/embed/v1/place?key=${googleMapsApiKey}&q=${latitude},${longitude}`}
           allowFullScreen
           loading="lazy"
         />
